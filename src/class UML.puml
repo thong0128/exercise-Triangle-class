@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Shape <|-- Triangle
+
+class Shape {
+-color:String = "blue"
+-filled:boolean "true"
++Shape()
++Shape(color:String,filled:boolean)
++getColor():String
++setColor(color:String):void
++isFilled():boolean
++setFilled(boolean:filled):void
++toString():String
+}
+note right of Shape::toString():String
+A Shape with color of xxx and filled/not filled
+end note
+
+class Triangle {
+-side1:double = 1.0
+-side2:double = 1.0
+-side3:double = 1.0
++Triangle()
++Triangle(side1:double,side2:double,side3:double)
++Triangle(side1:double,side2:double,side3:double,color:String,boolean:filled)
++getSide1():double
++getSide2():double
++getSide2():double
++setSide1(side:double):void
++setSide2(side:double):void
++setSide3(side:double):void
++getArea():double
++getPerimeter():double
++toString():String
+}
+note right of Triangle::toString():String
+A Triangle with area=xxx, perimeter=xxx and super.toString()
+end note
+
+
+
+@enduml
